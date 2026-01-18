@@ -1,8 +1,4 @@
-from .custom_logger import CustomLogger as _CustomLogger
-try:
-    from .custom_logger import CustomLogger
-except Exception:
-    CustomLogger = _CustomLogger
+from .custom_logger import CustomLogger
 
-
-GLOBAL_LOGGER = CustomLogger().get_logger(__name__)    
+_CustomLogger = CustomLogger
+GLOBAL_LOGGER = CustomLogger().get_logger(__name__)
